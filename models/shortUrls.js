@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const shortid = require("shortid");
+const shortId = require("shortid");
 
 const shortUrlsSchema = new mongoose.Schema({
     full: {
@@ -9,7 +9,7 @@ const shortUrlsSchema = new mongoose.Schema({
     short: {
         type: String,
         required: true,
-        default: shortid.generate
+        default: shortId.generate
     },
     clicks: {
         type: Number,
@@ -18,4 +18,4 @@ const shortUrlsSchema = new mongoose.Schema({
     }
 })
 
-exports.default = mongoose.model("shortUrls", shortUrlsSchema);
+module.exports = mongoose.model("shortUrls", shortUrlsSchema);
